@@ -1,0 +1,137 @@
+border-radius(n)
+  -webkit-border-radius n
+  -moz-border-radius n
+  border-radius n
+  
+box-shadow(args...)
+  -webkit-box-shadow args
+  -moz-box-shadow args
+  box-shadow args
+  
+body
+	font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+	background: #E9E9E9
+	margin: 0px
+	padding: 0px
+	min-width: 1000px
+	
+/*******************************
+          Globel
+*******************************/
+
+.ui.header
+	font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", "Arial", sans-serif
+
+.ui.header,
+h1,
+h2
+	font-weight: normal !important
+
+h1.ui.header
+	font-size: 3em
+
+h4.ui.header,
+h5.ui.header,
+.ui.icon.header
+	font-weight: bold !important
+
+a
+	color: #009FDA
+	text-decoration: none
+	-webkit-transition: color 0.3s ease
+	transition: color 0.3s ease
+
+a:hover
+	color: #00BAFF
+
+p a
+	font-weight: bold
+	
+/*******************************
+            Top Menu
+*******************************/
+
+.ui.main.menu
+	z-index: 900
+	transition: margin 0.3s ease
+	min-width: 1000px
+
+.ui.main.menu .icon.button .icon
+	padding-top: 0.6em
+	
+.ui.main.menu .create.button
+	width: 150px
+	
+.ui.transparent.menu
+	opacity: .9
+
+.ui.main.menu .login.button
+	width: 7em
+	
+.ui.dimmer #siginModal
+	width: 40%
+	margin-left: -20%
+
+/*******************************
+            Banner
+*******************************/
+
+header.main-header
+	padding-top: 70px
+	padding-bottom: 30px
+
+.ui.page.grid.segment
+	padding-top: 3.5rem
+	padding-bottom: 3.5rem
+
+.masthead.segment
+	background-image: data-url('/images/bg.jpg')
+	-webkit-background-size: cover
+	background-size: cover
+	margin: 0em
+	padding-top: 4rem
+	overflow: hidden
+	-webkit-box-shadow: 0 -20px 10px 0 rgba(0, 0, 0, 0.1) inset !important
+	box-shadow: 0 -20px 10px 0 rgba(0, 0, 0, 0.1) inset !important
+	
+.masthead.segment .column
+	position: relative
+
+.masthead.segment .information
+	margin: 3em 1em 1em 30px
+	text-align: left
+	
+.masthead.segment .information p
+	max-width: 600px
+	margin: 0em 0px 2em 0em
+	font-size: 1.2em
+
+.masthead.segment .column input
+	opacity: 0.9
+	
+.masthead.segment .ui.tabular.menu .active.item
+	background-color: rgba(255,255,255,0.9)
+
+.main-content
+	margin: auto 50px
+	
+.main-content .fluid.button
+	margin-bottom: 2em
+	
+.main-content .form#create_form
+	margin-top: 2em
+	
+#product_item_container .ui.floating.ribbon.label
+	top: 1em;
+	left: 6px;
+
+.footer.link.list
+	display: block
+	text-align: center
+	margin-bottom: 20px
+	
+	
+//create editor
+#i_create_elements
+	list-style: none
+	padding-left: 0

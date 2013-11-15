@@ -1,0 +1,32 @@
+extends ../layout
+
+block header-content	
+	header.main-header.ui.inverted.page.grid.masthead.segment
+		.ten.wide.column
+			.ui.transition.information
+				h1.inverted.header.logo #{title}
+				p At least he won't reach his highest potential unless you enroll him in Cat University's 2013 class.
+		.six.wide.column
+		
+	//分割线——————————————————————————————————————————————————————————	
+	.ui.horizontal.icon.divider
+		i.circular.archive.red.icon
+		
+block main-content
+	.main-content
+		.ui.grid.raised.segment
+			.column
+				h2.ui.header 
+					i.settings.icon
+					.content Products
+						.sub.header Manage your account settings and set e-mail preferences.
+				+showProducts(8)
+		
+		
+		
+		
+		
+		
+		
+		
+		

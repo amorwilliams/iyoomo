@@ -1,0 +1,35 @@
+include mixins/signin
+include mixins/products
+
+//-------------------------------------------
+
+include includes/header
+
+body#home
+
+	include includes/topmenu
+
+	header.main-header.ui.inverted.page.grid.masthead.segment
+		.ten.wide.column
+			.ui.transition.information
+				h1.inverted.header.logo #{title}
+				p At least he won't reach his highest potential unless you enroll him in Cat University's 2013 class.
+		.six.wide.column			
+			//+signinPage(user)
+						
+	//分割线——————————————————————————————————————————————————————————	
+	.ui.horizontal.icon.divider
+		i.circular.heart.red.icon
+		
+	.main-content
+		h2.ui.center.aligned.header WELCOME TO #{title}!
+		
+		.ui.grid.raised.segment
+			.column
+				h2.ui.header 
+					i.settings.icon
+					.content Products
+						.sub.header Manage your account settings and set e-mail preferences.	
+				+showProducts(8)
+											
+include includes/footer

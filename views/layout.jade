@@ -1,0 +1,21 @@
+include mixins/products
+
+//-------------------------------------------
+!!!5
+html(lang='en')
+	head
+		block head
+			title= title
+		include includes/header
+		block neck
+
+body
+	include includes/topmenu
+	block header-content
+	
+	block main-content				
+	
+	block footer
+		include includes/footer
+	
+	block feet

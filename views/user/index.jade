@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	.main-body
+		.page
+			.page-header
+				h1 #{username}
+			.login-section
+				p Welcome to #{username}
+				a(href='/') Back Home
+
+	include includes/footer
+		

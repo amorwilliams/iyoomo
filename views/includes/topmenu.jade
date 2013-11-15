@@ -1,0 +1,59 @@
+//script(type="text/javascript" src='/javascripts/src/menu.js')
+nav.ui.fixed.transparent.red.inverted.main.small.menu#top_menu
+	a.active.item(href='/')
+		i.home.icon
+		| Home
+	a.item(href='/product')
+		i.archive.icon 
+		| Product
+	a.item(href='#')
+		i.mail.icon
+		| Contact
+	a.item(href='#')
+		i.user.icon
+		| About
+	.right.menu
+		if('create' == page)
+			.item
+				a.ui.labeled.icon.save.teal.small.button#i_save_button
+					i.archive.icon 
+					| Save
+			.item
+				a.ui.labeled.icon.publish.teal.small.button#i_publish_button
+					i.archive.icon 
+					| Publish
+		else
+			.item
+				a.ui.labeled.icon.create.teal.small.button(href='/product/create')#i_create_button
+					i.archive.icon 
+					| Create
+			.item
+				.ui.icon.mini.input
+					input(type=text placeholder='Search...')
+					i.search.inke.icon
+		- if(user)
+			.ui.dropdown.item#user_button #{user.name}
+				i.icon.dropdown
+				.menu
+					a.item
+						i.edit.icon
+						| Profile
+					a.item
+						i.settings.icon
+						| Settings
+					a.item(href='/signout')
+						i.sign.in.icon
+						| Sign Out
+		else
+			.item
+				a.ui.labeled.create.teal.small.login.button
+					| Sign In
+					
+script.
+	$('#user_button')
+		.dropdown({
+			on: 'hover'
+		})
+	;
+	
+include ../modals/signinModal

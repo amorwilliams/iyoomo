@@ -1,0 +1,41 @@
+mixin showProducts(num)
+	.ui.five.items#product_item_container
+		- for(var i = 0; i < num; i++)
+			article.item
+				.image
+					.floating.ui.red.ribbon.label cup
+					img(src="/images/demo/highres4.jpg")
+					a.star.ui.corner.label
+						i.star.icon
+				.content
+					.name Cute Dog
+					p.description
+						|This dog has some things going for it. Its pretty cute and looks like it'd be fun to cuddle up with.
+			article.item
+				.image
+					img(src="/images/demo/highres6.jpg")
+					a.star.ui.corner.label
+						i.star.icon
+				.content
+					.name Cute Dog
+					p.description
+						|This dog has some things going for it. Its pretty cute and looks like it'd be fun to cuddle up with.
+			article.item
+				.image
+					.floating.ui.green.ribbon.label this win a gift
+					img(src="/images/demo/highres5.jpg")
+					a.star.ui.corner.label
+						i.star.icon
+				.content
+					.name Cute Dog
+					p.description
+						|This dog has some things going for it. Its pretty cute and looks like it'd be fun to cuddle up with.
+			article.item
+				.image
+					img(src="/images/demo/highres3.jpg")
+					a.star.ui.corner.label
+						i.star.icon
+				.content
+					.name Cute Dog
+					p.description
+						|This dog has some things going for it. Its pretty cute and looks like it'd be fun to cuddle up with.

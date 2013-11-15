@@ -1,0 +1,61 @@
+mixin signinPage(user)
+	//sing up form
+	.ui.page.grid#signin
+		.row
+			.column
+				.ui.small.tabular.menu
+					a.right.active.item(data-tab='signin') Sign In
+					a.right.item(data-tab='signup') Sign Up
+		.row
+			.column
+				.ui.tab(data-tab='signup')
+					form(action='/signup' method='post').ui.fluid.blue.small.form#signup_form
+						.field
+							label Email
+							.ui.left.labeled.icon.small.input
+								input(type='text' name='email' placeholder='example@domain.com')#signup_email
+								i.mail.icon
+								.ui.corner.label
+									i.icon.asterisk
+						.field
+							label Username
+							.ui.left.labeled.icon.small.input
+								input(type='text' name='username' placeholder='username')#signup_username
+								i.user.icon
+								.ui.corner.label
+									i.icon.asterisk
+						.field
+							label Password
+							.ui.left.labeled.icon.small.input
+								input(type='password' name='password')#signup_password
+								i.mail.icon
+								.ui.corner.label
+									i.icon.asterisk
+						.field
+							label Confirm password
+							.ui.left.labeled.icon.small.input
+								input(type='password' name='repassword')#signup_repassword
+								i.lock.icon
+								.ui.corner.label
+									i.icon.asterisk
+						.inline.field
+							.ui.checkbox
+								input(type='checkbox', id='terms')
+								label(for='terms') I agree to the terms and conditions
+						button(type='submit').ui.right.floated.red.small.submite.button#signup_btn Sign Up
+				//signin form		
+				.ui.tab.active(data-tab='signin')
+					form(method='post').ui.fluid.blue.small.form#signin_form
+						.field
+							label Email
+							.ui.left.labeled.icon.small.input
+								input(type='text' name='email' placeholder='example@gmail.com')#signin_email
+								i.mail.icon
+						.field
+							label Password
+							.ui.left.labeled.icon.small.input
+								input(type='password' name='password')#signin_password
+								i.lock.icon
+						.ui.error.message
+							.header We noticed some issues
+						button(type='submit').ui.right.floated.red.small.submite.button#signin_btn Sign In
