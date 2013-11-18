@@ -33,10 +33,12 @@ exports = module.exports = function(app){
 	
 	//product
 	app.get('/product', loadUser, require('./views/product/index').init);
-	app.get('/product/create', loadUser, require('./views/product/create/index').init)
+/* 	app.get('/product/create', loadUser, require('./views/product/create/index').init) */
 	
-	
-	
+	//product editor
+	app.get('/product/create', require('./views/product/create/index').init);
+	app.get('/product/create/partials/:name', require('./views/product/create/index').partials);
+		
 	//route not found
 /* 	app.all('*', require('./views/http/index').http404); */
 };

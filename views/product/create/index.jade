@@ -6,6 +6,14 @@ mixin addElement(name)
 
 extends ../../layout
 
+block neck
+	script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.js')
+	script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.min.js')
+	script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-route.min.js')
+	script(src='//cdn.firebase.com/v0/firebase.js')
+	script(src='//cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js')
+	script(src='../js/product_editor/app.js')
+
 block header-content	
 	header.main-header.ui.inverted.page.grid.masthead.segment
 		
@@ -14,118 +22,8 @@ block header-content
 		i.circular.archive.red.icon
 		
 block main-content
-	.main-content
-		.ui.two.column.relaxed.grid.segment
-			.column
-				.mini.icon.ui.buttons
-					.ui.button
-						i.align.left.icon
-					.ui.button
-						i.align.center.icon
-					.ui.mini.button
-						i.align.right.icon
-					.ui.button
-						i.align.justify.icon
-				.floated.right.mini.icon.ui.buttons
-					.ui.button
-						i.align.left.icon
-					.ui.button
-						i.align.center.icon
-					.ui.mini.button
-						i.align.right.icon
-					.ui.button
-						i.align.justify.icon
-				form(method='post').ui.fluid.form#create_form
-					.header
-						.field
-							.ui.left.labeled.icon.small.input
-								input(type='text' name='name' placeholder='Product Name')
-								i.archive.icon
-								.ui.corner.label
-									i.icon.asterisk
-						.field
-							textarea(name='description' maxlength='300' placeholder='Description')
-					.field
-						ul#i_create_elements
-							.marker
-							+addElement('1111111')
-							+addElement('2222222')
-							+addElement('3333333')
-							+addElement('4444444')
-							+addElement('5555555')					
-							
-					.field
-						label Price
-						.ui.left.labeled.icon.small.input
-							input(type='number' name='price' placeholder='99.99')
-							i.money.icon
-							.ui.corner.label
-								i.icon.asterisk
-					.field
-						.ui.labeled.icon.tiny.button
-							i.pause.icon
-							| Publish
-						
-			.column
-				form.ui.fluid.form				
-					
-					
-		//弹出窗口
-	.ui.basic.modal.transition
-		i.close.icon
-		.header Modal Title
-		.content
-			.left
-				.archive.icon
-			.right 
-				p 
-					| Are you sure you want to change your homepage to 
-					b iyoomo.com 
-					| ?
-		.actions
-			.two.fluid.ui.buttons
-				.ui.negative.labeled.icon.button
-					i.remove.icon 
-					| NO
-				.ui.positive.right.labeled.icon.button
-					| YES
-					i.checkmark.icon 
-block feet
-	script(type="text/javascript" src='/js/lib/handlebars/handlebars-1.0.0.js')
-	script(type="text/javascript" src='/js/lib/ember/ember.js')
-	script(type="text/javascript" src='/js/lib/ember/ember-data.js')
-	script(type="text/javascript" src='/js/product_editor/application.js')
-	script(type="text/javascript" src='/js/product_editor/router.js')
-	script.
-		var showUploadImg = function(){
-			$('.ui.modal')
-			.modal('setting', {
-				closable  : false,
-				onDeny    : function(){
-					window.alert('Wait not yet!');
-					return false;
-				},
-				onApprove : function() {
-					window.alert('Approved!');
-				}
-			},
-			'transition', 
-			'scale')
-			.modal('show')
-			;
-		}
-		
-		$(function() {
-			$( "#draggable" ).draggable({ 
-				revert: true 
-			}).zIndex(99).resizable();
-		});
-		
-		$(document).ready(function(){
-			$( ".i_create_element" )
-				.sortable({
-					axis: "y",
-				});
-			//$( ".i_create_element" ).disableSelection();
-		});
-		
+	section(ng-app='myApp')
+		h2.ui.header
+			i.settings.icon
+			| JavaScript Projects
+		section(ng-view)

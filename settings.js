@@ -48,6 +48,7 @@ exports.assetsSettings = {
 		, 'dataType': 'css'
 		, 'files': [
 			'iyoomo.styl'
+			,'todo.styl'
 		]
 		, 'debug': true
 		, 'stale': false

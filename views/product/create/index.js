@@ -9,3 +9,8 @@ exports.init = function(req, res){
 			success: req.flash('success').toString()
 		});
 };
+
+exports.partials = function (req, res) {
+	var name = req.params.name;
+	res.render('product/create/partials/' + name);
+};
