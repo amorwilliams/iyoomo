@@ -1,0 +1,18 @@
+.ui.input.fluid
+	input.search-query(type='text', ng-model='search', placeholder='Search')
+table.ui.table.segment
+	thead
+		tr
+			th Project
+			th Description
+			th
+				a(href='#/new')
+					i.ui.add.icon
+	tbody
+		tr(ng-repeat='project in projects | filter:search | orderBy:"name"' ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}")
+			td
+				a(href='//{{project.site}}', target='_blank') {{project.name}}
+			td {{project.description}}
+			td
+				a(href='#/edit/{{project.$id}}')
+					i.ui.edit.sign.icon
